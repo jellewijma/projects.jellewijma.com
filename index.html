@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Projects by Jelle Wijma: web, audio, lighting, AI, and creative technical experiments."
+    />
+    <title>Projects | Jelle Wijma</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#projects">Skip to projects</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="https://jellewijma.com" aria-label="Jelle Wijma home">
+          <span class="brand-mark" aria-hidden="true">JW</span>
+          <span>Jelle Wijma</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="https://jellewijma.com">Home</a>
+          <a href="https://projects.jellewijma.com" aria-current="page">Projects</a>
+          <a href="https://github.com/your-github-username" data-placeholder="true">GitHub</a>
+          <a href="mailto:hello@example.com" data-placeholder="true">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <p class="eyebrow">projects.jellewijma.com</p>
+          <h1 id="hero-title">Projects</h1>
+          <p class="hero-subtitle">
+            A collection of things I'm building, testing, learning, and experimenting with.
+          </p>
+          <p class="hero-intro">
+            This is a central hub for my web, audio, lighting, AI, and creative technical
+            projects. Some are live, some are still being tuned, and some are here because
+            experiments deserve a tidy shelf too.
+          </p>
+        </div>
+
+        <div class="hero-panel" aria-label="Project categories overview">
+          <div class="signal-grid" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <dl class="stats">
+            <div>
+              <dt id="project-count">7</dt>
+              <dd>Projects</dd>
+            </div>
+            <div>
+              <dt>5</dt>
+              <dd>Categories</dd>
+            </div>
+            <div>
+              <dt>&infin;</dt>
+              <dd>Room to build</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="filters-section" aria-labelledby="filters-title">
+        <div class="section-heading">
+          <h2 id="filters-title">Browse by category</h2>
+          <p id="filter-status" aria-live="polite">Showing all projects.</p>
+        </div>
+
+        <div class="filters" aria-label="Project categories">
+          <button class="filter-button is-active" type="button" aria-pressed="true" data-filter="All">
+            All
+          </button>
+          <button class="filter-button" type="button" aria-pressed="false" data-filter="Web">
+            Web
+          </button>
+          <button class="filter-button" type="button" aria-pressed="false" data-filter="Audio">
+            Audio
+          </button>
+          <button class="filter-button" type="button" aria-pressed="false" data-filter="Lighting">
+            Lighting
+          </button>
+          <button class="filter-button" type="button" aria-pressed="false" data-filter="AI">
+            AI
+          </button>
+          <button class="filter-button" type="button" aria-pressed="false" data-filter="Experiments">
+            Experiments
+          </button>
+        </div>
+      </section>
+
+      <section class="projects-section" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <h2 id="projects-title">Project index</h2>
+          <p>Quick notes, current status, and useful links for each project.</p>
+        </div>
+
+        <div class="projects-grid" id="projects"></div>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <h3>More projects coming soon.</h3>
+          <p>This category is quiet for now, but there is space reserved for future work.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Built by Jelle Wijma</p>
+      <div class="footer-links">
+        <a href="https://jellewijma.com">jellewijma.com</a>
+        <a href="https://github.com/your-github-username" data-placeholder="true">GitHub placeholder</a>
+        <a href="mailto:hello@example.com" data-placeholder="true">Email placeholder</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

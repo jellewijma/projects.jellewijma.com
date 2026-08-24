@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import {
@@ -33,8 +33,16 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/lib/projects";
 
+const subscribeToHydration = () => () => {};
+
 function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
+  const mounted = useSyncExternalStore(
+    subscribeToHydration,
+    () => true,
+    () => false,
+  );
+  const isDark = mounted && resolvedTheme === "dark";
 
   return (
     <Button
@@ -42,10 +50,10 @@ function ThemeToggle() {
       variant="outline"
       size="icon-lg"
       className="theme-toggle"
-      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-      aria-label={resolvedTheme === "dark" ? "Use light theme" : "Use dark theme"}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      aria-label={mounted ? (isDark ? "Use light theme" : "Use dark theme") : "Toggle theme"}
     >
-      {resolvedTheme === "dark" ? <Sun /> : <Moon />}
+      {isDark ? <Sun /> : <Moon />}
     </Button>
   );
 }
